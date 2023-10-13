@@ -16,8 +16,7 @@ function getComputerChoice() {
     return (outChoice)
 }
 
-//Get user input, store it in a variable
-//issues: only runs once
+//Get user input
 
 function getUserChoice() {
     while (true) {
@@ -25,7 +24,7 @@ function getUserChoice() {
 
         // converts choice to lower case for comparisons
         userChoice = userChoice.toLowerCase();
-
+        return 
         if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
             alert("Error: invalid input. Please try again");
         }
@@ -38,30 +37,33 @@ function getUserChoice() {
 
 
 //Game logic
-//here is fairly easy. split into win, lose, and tie conditions:
-// For example, 
-// if computerChoice = 1 (rock) and playerChoice = 2, 
-// or computerChoice = 2, player choice = 3
-// or computerChoice = 3, player choice = 1
-// send win condition
 
-function playRound (playerChoice, computerChoice) {
-    if playerChoice == computerChoice {
-        return (alert(computerChoice + "its a tie!"))
+function playRound () {
+
+    computerChoice = getComputerChoice();
+    playerChoice = getUserChoice();
+
+    if 
+    (playerChoice == computerChoice) {
+        (alert("Computer chose: " + computerChoice + ". " + "its a tie!"));
+        return;
     }
-    else if playerChoice == 'rock' && computerChoice == 'scissors'
+    else if 
+    (playerChoice == 'rock' && computerChoice == 'scissors' ||
+    playerChoice == 'scissors' && computerChoice == 'paper' ||
+    playerChoice == 'paper' && computerChoice == 'rock') {
+        (alert("Computer chose: " + computerChoice + ". You win!"));
+        return;
+    } 
+    else {
+        (alert("Computer chose: " + computerChoice + ". You lost :("));
+        return;
+    }
 }
 
-//single round
-function playRound(playerChoice, computerChoice) {
-
-}
 
 //counter
 // need a program that increases the counter of either variable a or
 // variable b, depending on the program. Then, if this variable is more than 5 the game is over and we declare the overall winner
 
 //full game
-function game() {
-
-}
