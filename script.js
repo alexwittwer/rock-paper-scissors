@@ -24,7 +24,7 @@ function getUserChoice() {
 
         // converts choice to lower case for comparisons
         userChoice = userChoice.toLowerCase();
-        
+
         if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
             alert("Error: invalid input. Please try again");
         }
@@ -66,3 +66,12 @@ function playRound () {
 // variable b, depending on the program. Then, if this variable is more than 5 the game is over and we declare the overall winner
 
 //full game
+
+function playRPS() {
+    let i = 1;
+
+    while (i < 10) {
+        playRound();
+        i++;
+    }
+}
