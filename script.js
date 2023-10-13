@@ -24,7 +24,7 @@ function getUserChoice() {
 
         // converts choice to lower case for comparisons
         userChoice = userChoice.toLowerCase();
-        return 
+        
         if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
             alert("Error: invalid input. Please try again");
         }
@@ -40,23 +40,22 @@ function getUserChoice() {
 
 function playRound () {
 
-    computerChoice = getComputerChoice();
-    playerChoice = getUserChoice();
-
-    if 
-    (playerChoice == computerChoice) {
-        (alert("Computer chose: " + computerChoice + ". " + "its a tie!"));
+    let computerChoice = getComputerChoice();
+    console.log(computerChoice);
+    let playerChoice = getUserChoice();
+    console.log(playerChoice);
+    if (playerChoice == computerChoice) {
+        alert("Computer chose: " + computerChoice + ". " + "It's a tie!");
         return;
     }
-    else if 
-    (playerChoice == 'rock' && computerChoice == 'scissors' ||
+    else if (playerChoice == 'rock' && computerChoice == 'scissors' ||
     playerChoice == 'scissors' && computerChoice == 'paper' ||
     playerChoice == 'paper' && computerChoice == 'rock') {
-        (alert("Computer chose: " + computerChoice + ". You win!"));
+        alert("Computer chose: " + computerChoice + ". You win!");
         return;
     } 
     else {
-        (alert("Computer chose: " + computerChoice + ". You lost :("));
+        alert("Computer chose: " + computerChoice + ". You lost :(");
         return;
     }
 }
