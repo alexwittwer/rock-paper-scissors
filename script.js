@@ -1,26 +1,40 @@
 function getComputerChoice() {
-    const computerChoice = Math.floor(Math.random()*3) + 1;
+    const computerChoice = Math.floor(Math.random() * 3) + 1;
     let outChoice = '';
 
-//Logic for computer choice, outputs the computer choice as a string
-//and allows the program to append the win conditions based on this choice
+    //Logic for computer choice, outputs the computer choice as a string
+    //and allows the program to append the win conditions based on this choice
+
+    //tested working
     if (computerChoice == 1) {
-        outChoice = 'Computer chose Rock: ';
-    } else if (computerChoice == 2){
-        outChoice = 'Computer chose Paper: ';
-    } else if (computerChoice == 3){
-        outChoice = 'Computer chose Scissors: ';
+        outChoice = 'rock';
+    } else if (computerChoice == 2) {
+        outChoice = 'paper';
+    } else if (computerChoice == 3) {
+        outChoice = 'scissors';
     }
-    return (computerChoice, outChoice)
+    return (outChoice)
 }
 
+//Get user input, store it in a variable
+//issues: only runs once
 
-//User input.
+function getUserChoice() {
+    while (true) {
+        let userChoice = prompt("Please enter Rock, Paper or Scissors ");
 
-//Arbitrarily define 1 as rock, 2 as paper, 3 as scissors (matches computer)
-//because this will likely make the code easier to parse
-//since we are simply comparing the two numbers.
-//raise an exception if the player choses something other than Rock, Paper, or Scissors
+        // converts choice to lower case for comparisons
+        userChoice = userChoice.toLowerCase();
+
+        if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
+            alert("Error: invalid input. Please try again");
+        }
+        else {
+            return userChoice;
+        }
+    }
+}
+
 
 
 //Game logic
@@ -31,8 +45,15 @@ function getComputerChoice() {
 // or computerChoice = 3, player choice = 1
 // send win condition
 
+function playRound (playerChoice, computerChoice) {
+    if playerChoice == computerChoice {
+        return (alert(computerChoice + "its a tie!"))
+    }
+    else if playerChoice == 'rock' && computerChoice == 'scissors'
+}
+
 //single round
-function playRound(playerChoice, computerChoice){
+function playRound(playerChoice, computerChoice) {
 
 }
 
@@ -41,6 +62,6 @@ function playRound(playerChoice, computerChoice){
 // variable b, depending on the program. Then, if this variable is more than 5 the game is over and we declare the overall winner
 
 //full game
-function game(){
+function game() {
 
 }
