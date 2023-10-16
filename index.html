@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors!</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -16,12 +15,17 @@
       <p class="title">rock.paper.scissors</p>
       <div id="mainWindow"></div>
       <div id="playerWindow">
-        <button id="rock"><i class="fa fa-hand-grab-o fa-5x"></i></button>
-        <button id="paper"><i class="fa fa-hand-paper-o fa-5x"></i></button>
-        <button id="scissors">
+        <button id="rock" value="rock">
+          <i class="fa fa-hand-grab-o fa-5x"></i>
+        </button>
+        <button id="paper" value="paper">
+          <i class="fa fa-hand-paper-o fa-5x"></i>
+        </button>
+        <button id="scissors" value="scissors">
           <i class="fa fa-hand-scissors-o fa-5x"></i>
         </button>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
