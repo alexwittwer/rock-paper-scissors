@@ -7,8 +7,10 @@ button {
   font-family: monospace;
   width: 150px;
   height: 150px;
-  border-radius: 25px;
-  border: none;
+  border-radius: 100%;
+  border: white;
+  border-style: solid;
+  border-width: 0.2rem;
 }
 
 button:hover {
@@ -36,8 +38,11 @@ button:active {
 
 #mainWindow {
   background-color: #cfa44e;
-  width: 400px;
+  width: 600px;
   height: 400px;
+  border: white;
+  border-style: solid;
+  border-width: 0.2rem;
   border-radius: 25px;
   justify-content: center;
   align-items: center;
