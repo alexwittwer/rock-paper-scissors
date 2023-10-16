@@ -21,49 +21,40 @@ function getComputerChoice() {
 //game logic -- button
 //event listeners for buttons
 
-const rockbtn = document.querySelector("#rock");
-rockbtn.addEventListener("click", () => {
-  playRound(rockbtn.value);
+const btn = document.querySelectorAll(".playButton");
+btn.forEach((item) => {
+  item.addEventListener("click", () => {
+    playRound(item.value);
+  });
 });
 
-const paperbtn = document.querySelector("#paper");
-paperbtn.addEventListener("click", () => {
-  playRound(paperbtn.value);
-});
+//initialize gameResult pointer
+const gameResult = document.querySelector(".gameResult");
+//clear gameResult text
+gameResult.textContent = "";
 
-const scissorsbtn = document.querySelector("#scissors");
-scissorsbtn.addEventListener("click", () => {
-  playRound(scissorsbtn.value);
-});
-
+//main game logic
 function playRound(playerChoice) {
   let computerChoice = getComputerChoice();
 
-  //main game logic
-
-  // checks to see if the user choice is identical to computer choice
-  // we have to be careful here because all non-empty strings return 'true'
-  // as a boolean value, so we use the strict equality when comparing
-  // strings.
   if (playerChoice === computerChoice) {
-    alert("Computer chose: " + computerChoice + ". " + "It's a tie!");
+    gameResult.textContent =
+      "Computer chose " + computerChoice + ". " + "It's a tie!";
     return;
   }
-
-  // compares user's choice against the computer for player win conditions
-  //  the boolean logic here is that we continue until we get one truthy
-  // value.
+  //win conditions
   else if (
     (playerChoice === "rock" && computerChoice === "scissors") ||
     (playerChoice === "scissors" && computerChoice === "paper") ||
     (playerChoice === "paper" && computerChoice === "rock")
   ) {
-    alert("Computer chose: " + computerChoice + ". You win!");
+    gameResult.textContent = "Computer chose " + computerChoice + ". You win!";
 
-    // return a string here for readability and simplicity
+    // else, lose
     return "user";
   } else {
-    alert("Computer chose: " + computerChoice + ". You lost :(");
+    gameResult.textContent =
+      "Computer chose " + computerChoice + ". You lost :(";
     return "computer";
   }
 }

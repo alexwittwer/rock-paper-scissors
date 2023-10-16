@@ -1,7 +1,19 @@
 body {
   background-color: #5a80cc;
 }
-
+.gameResult {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 36px;
+  border-radius: 16px;
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 button {
   background-color: #cfa44e;
   font-family: monospace;
@@ -40,12 +52,14 @@ button:active {
   background-color: #cfa44e;
   width: 600px;
   height: 400px;
+  padding: 24px;
   border: white;
   border-style: solid;
   border-width: 0.2rem;
   border-radius: 25px;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 #playerWindow {
