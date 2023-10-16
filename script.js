@@ -18,96 +18,26 @@ function getComputerChoice() {
   return outChoice;
 }
 
-//get user input and returns a string
-function getUserChoice() {
-  // this while loop will run until a valid choice is made.
-  // if an invalid input is given, the function will
-  // give the user an error message and reprompt them.
-  while (true) {
-    let userChoice = prompt("Please enter Rock, Paper or Scissors ");
-
-    // converts choice to lower case to eliminate any
-    // wonky inputs like 'ScIsSoRs' or 'Paper'
-    userChoice = userChoice.toLowerCase();
-
-    // this checks validity of the user input. if the input
-    // is valid, then returns the user's input as a string
-    if (
-      userChoice != "rock" &&
-      userChoice != "paper" &&
-      userChoice != "scissors"
-    ) {
-      alert("Error: invalid input. Please try again");
-    } else {
-      return userChoice;
-    }
-  }
-}
-
 //game logic -- button
 //event listeners for buttons
 
 const rockbtn = document.querySelector("#rock");
-console.log(rockbtn.value);
-
 rockbtn.addEventListener("click", () => {
-  playBtnRound(rockbtn.value);
+  playRound(rockbtn.value);
 });
 
 const paperbtn = document.querySelector("#paper");
-console.log(paperbtn.value);
-
 paperbtn.addEventListener("click", () => {
-  playBtnRound(paperbtn.value);
+  playRound(paperbtn.value);
 });
 
 const scissorsbtn = document.querySelector("#scissors");
-console.log(scissorsbtn.value);
-
 scissorsbtn.addEventListener("click", () => {
-  playBtnRound(scissorsbtn.value);
+  playRound(scissorsbtn.value);
 });
 
-function playBtnRound(playerChoice) {
-  //instantiates and gets computer and user choices, stores
-  //them as variables in the playRound() scope
+function playRound(playerChoice) {
   let computerChoice = getComputerChoice();
-
-  //main game logic
-
-  // checks to see if the user choice is identical to computer choice
-  // we have to be careful here because all non-empty strings return 'true'
-  // as a boolean value, so we use the strict equality when comparing
-  // strings.
-  if (playerChoice === computerChoice) {
-    alert("Computer chose: " + computerChoice + ". " + "It's a tie!");
-    return;
-  }
-
-  // compares user's choice against the computer for player win conditions
-  //  the boolean logic here is that we continue until we get one truthy
-  // value.
-  else if (
-    (playerChoice === "rock" && computerChoice === "scissors") ||
-    (playerChoice === "scissors" && computerChoice === "paper") ||
-    (playerChoice === "paper" && computerChoice === "rock")
-  ) {
-    alert("Computer chose: " + computerChoice + ". You win!");
-
-    // return a string here for readability and simplicity
-    return "user";
-  } else {
-    alert("Computer chose: " + computerChoice + ". You lost :(");
-    return "computer";
-  }
-}
-
-//Game logic -- prompt
-function playRound(button) {
-  //instantiates and gets computer and user choices, stores
-  //them as variables in the playRound() scope
-  let computerChoice = getComputerChoice();
-  let playerChoice = getUserChoice();
 
   //main game logic
 
