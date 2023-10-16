@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors!</title>
     <script src="script.js"></script>
-</head>
-<body>
-    <script>playRPS()</script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <section class="gameWindow">
+      <p class="title">rock paper scissors</p>
+      <div id="mainWindow"></div>
+      <div id="playerWindow">
+        <button id="rock"><i class="fa fa-hand-grab-o fa-5x"></i></button>
+        <button id="paper"><i class="fa fa-hand-paper-o fa-5x"></i></button>
+        <button id="scissors">
+          <i class="fa fa-hand-scissors-o fa-5x"></i>
+        </button>
+      </div>
+    </section>
+  </body>
 </html>

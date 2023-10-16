@@ -78,7 +78,7 @@ function playRound() {
     }
 }
 
-
+/* 
 //full game
 function playRPS() {
     //initialize values for win condition
@@ -106,4 +106,4 @@ function playRPS() {
             return;
         }
     }
-}
+} */
