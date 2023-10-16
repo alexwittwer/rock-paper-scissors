@@ -8,8 +8,6 @@ button {
   width: 150px;
   height: 150px;
   border-radius: 25px;
-  justify-content: center;
-  align-items: center;
   border: none;
 }
 
@@ -30,7 +28,7 @@ button:active {
   text-align: center;
   color: white;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 32px;
   font-family: "Courier New", Courier, monospace;
   margin: 0px;
   padding: 0px;
@@ -49,7 +47,6 @@ button:active {
   margin-top: 50px;
   gap: 40px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -62,7 +59,6 @@ button:active {
   padding: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
