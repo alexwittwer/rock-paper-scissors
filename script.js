@@ -21,8 +21,8 @@ function getComputerChoice() {
 const btn = document.querySelectorAll(".playButton");
 const usrScore = document.querySelector("#userScore");
 const cmpScore = document.querySelector("#computerScore");
-let userScore;
-let compScore;
+let userScore = 0;
+let compScore = 0;
   
 
 btn.forEach((item) => {
@@ -56,13 +56,13 @@ function playRound(playerChoice) {
     (playerChoice === "paper" && computerChoice === "rock")
   ) {
     gameResult.textContent = "You win! Computer chose " + computerChoice + ".";
-    userScore++;
+    userScore += 1;
     //lose conditions
     return "user";
   } else {
     gameResult.textContent =
       "You lost :( Computer chose " + computerChoice + ".";
-      compScore++;
+      compScore += 1;
     return "computer";
   }
 }
