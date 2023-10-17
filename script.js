@@ -14,7 +14,7 @@ function getComputerChoice() {
   return outChoice;
 }
 
-//game logic -- button
+//game start
 
 //event listeners for buttons. adds all playButtons to btn nodelist
 //then iterates an event listener using each button's stored value
@@ -24,6 +24,7 @@ const cmpScore = document.querySelector("#computerScore");
 let userScore = 0;
 let compScore = 0;
 const gameResult = document.querySelector(".gameResult");
+//sets initial game result message
 gameResult.textContent = "choose your weapon - first to 5 wins"
   
 while (userScore <5 && compScore < 5){
