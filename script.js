@@ -112,7 +112,7 @@ function resetGame() {
   gameResult.textContent = "choose your weapon";
   usrScore.textContent = "Player Score: " + userScore;
   cmpScore.textContent = "Computer Score: " + compScore;
-  // Remove the reset button if it exists
+  // remove the reset button if it exists
   const resetButton = document.querySelector(".resetButton");
   if (resetButton) {
     resetButton.parentNode.removeChild(resetButton);
