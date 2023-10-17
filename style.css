@@ -63,7 +63,7 @@ button:active {
   justify-content: center;
   align-items: center;
   display: flex;
-  flex: 0 0 100%;
+  flex-shrink 0;
 }
 
 #playerWindow {
@@ -101,17 +101,16 @@ span {
 }
 
 .resetButton {
-  display: block;
+  justify-content: center;
   background-color: black;
   color: white;
   font-weight: 700;
-  width: 80%;
+  width: 50%;
   height: 30%;
-  border-radius: 20%;
+  border-radius: 0%;
   border: white;
   border-style: solid;
   border-width: 0.2rem;
   padding: 12px;
-  align-self: center;
-  justify-content: center;
+  margin-bottom: 2%;
 }
