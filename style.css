@@ -24,7 +24,7 @@ body {
   border-style: solid;
   border-width: 0.2rem;
   padding: 12px;
-  flex: 1 1 0;
+  flex: 1 0 0;
 }
 
 button:hover {
@@ -112,5 +112,9 @@ span {
   border-style: solid;
   border-width: 0.2rem;
   padding: 12px;
-  margin-bottom: 2%;
+  margin-bottom: 10%;
+}
+
+.resetButton:hover {
+  background-color: rgb(124, 190, 58);
 }
