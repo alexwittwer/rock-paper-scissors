@@ -99,9 +99,22 @@ function createResetButton() {
     mainWindow.insertBefore(resetButton, scoreboard);
     const resetButtonPointer = document.querySelector(".resetButton");
     resetButtonPointer.addEventListener("click", () => {
-      window.location.reload();
+      resetGame();
     });
   } else {
     return;
+  }
+}
+
+function resetGame() {
+  userScore = 0;
+  compScore = 0;
+  gameResult.textContent = "choose your weapon";
+  usrScore.textContent = "Player Score: " + userScore;
+  cmpScore.textContent = "Computer Score: " + compScore;
+  // Remove the reset button if it exists
+  const resetButton = document.querySelector(".resetButton");
+  if (resetButton) {
+    resetButton.parentNode.removeChild(resetButton);
   }
 }
