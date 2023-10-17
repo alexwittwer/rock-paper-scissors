@@ -17,8 +17,8 @@ body {
 button {
   background-color: #cfa44e;
   font-family: monospace;
-  width: 150px;
-  height: 150px;
+  width: 20%;
+  height: 20%;
   border-radius: 100%;
   border: white;
   border-style: solid;
@@ -50,8 +50,8 @@ button:active {
 
 #mainWindow {
   background-color: #cfa44e;
-  width: 600px;
-  height: 400px;
+  width: 90%;
+  height: 90%;
   padding: 24px;
   border: white;
   border-style: solid;
@@ -60,6 +60,7 @@ button:active {
   justify-content: center;
   align-items: center;
   display: flex;
+  flex: 0 0 100%;
 }
 
 #playerWindow {
