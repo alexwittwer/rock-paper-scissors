@@ -1,6 +1,7 @@
 const btn = document.querySelectorAll(".playButton");
 const usrScore = document.querySelector("#userScore");
 const cmpScore = document.querySelector("#computerScore");
+const mainWindow = document.querySelector("#mainWindow");
 const scoreboard = document.querySelector(".scoreboard");
 
 //initialize values for userScore and compScore. Will update
@@ -12,7 +13,7 @@ let compScore = 0;
 btn.forEach((item) => {
   item.addEventListener("click", () => {
     playRound(item.value);
-    winConEvent();
+    winCon();
     usrScore.textContent = "Player Score: " + userScore;
     cmpScore.textContent = "Computer Score: " + compScore;
   });
@@ -62,21 +63,11 @@ function playRound(playerChoice) {
 function winCon() {
   if (userScore == 5) {
     gameResult.textContent = "Victory!";
+    createResetButton();
     return true;
   } else if (compScore == 5) {
     gameResult.textContent = "Defeat...";
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function winConEvent() {
-  if (userScore == 5) {
-    gameResult.textContent = "Victory!";
-    return true;
-  } else if (compScore == 5) {
-    gameResult.textContent = "Defeat...";
+    createResetButton();
     return true;
   } else {
     return false;
@@ -100,14 +91,17 @@ function getComputerChoice() {
 }
 
 function createResetButton() {
-  const resetButton = document.createElement("button");
-  resetButton.setAttribute("class", "resetButton");
-  scoreboard.insertBefore(resetButton, usrScore);
-  const resetButtonPointer = document.querySelector(".resetButton");
-  resetButton.textContent = "Play again?";
-}
-
-function removeResetButton() {
-  const resetButtonPointer = document.querySelector(".resetButton");
-  resetButtonPointer.remove();
+  //check if resetButton exists, create one if it doesn't exist
+  if (document.querySelector(".resetButton") == null) {
+    const resetButton = document.createElement("button");
+    resetButton.setAttribute("class", "resetButton");
+    resetButton.textContent = "Play again?";
+    mainWindow.insertBefore(resetButton, scoreboard);
+    const resetButtonPointer = document.querySelector(".resetButton");
+    resetButtonPointer.addEventListener("click", () => {
+      window.location.reload();
+    });
+  } else {
+    return;
+  }
 }
