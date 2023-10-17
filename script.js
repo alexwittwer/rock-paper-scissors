@@ -37,7 +37,7 @@ function playRound(playerChoice) {
 
   if (playerChoice === computerChoice) {
     gameResult.textContent =
-      "Computer chose " + computerChoice + ". " + "It's a tie!";
+      "It's a tie! Computer chose " + computerChoice + ". ";
     return;
   }
   //win conditions
@@ -46,13 +46,13 @@ function playRound(playerChoice) {
     (playerChoice === "scissors" && computerChoice === "paper") ||
     (playerChoice === "paper" && computerChoice === "rock")
   ) {
-    gameResult.textContent = "Computer chose " + computerChoice + ". You win!";
+    gameResult.textContent = "You win! Computer chose " + computerChoice + ".";
 
     //lose conditions
     return "user";
   } else {
     gameResult.textContent =
-      "Computer chose " + computerChoice + ". You lost :(";
+      "You lost :( Computer chose " + computerChoice + ".";
     return "computer";
   }
 }
