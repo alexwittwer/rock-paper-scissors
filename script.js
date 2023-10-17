@@ -19,9 +19,14 @@ function getComputerChoice() {
 //event listeners for buttons. adds all playButtons to btn nodelist
 //then iterates an event listener using each button's stored value
 const btn = document.querySelectorAll(".playButton");
+const usrScore = document.querySelector("#userScore");
+const cmpScore = document.querySelector("#computerScore");
+  
+
 btn.forEach((item) => {
   item.addEventListener("click", () => {
     playRound(item.value);
+
   });
 });
 
