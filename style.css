@@ -14,7 +14,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-button {
+.playButton {
   background-color: #cfa44e;
   font-family: monospace;
   width: 15%;
@@ -23,7 +23,7 @@ button {
   border: white;
   border-style: solid;
   border-width: 0.2rem;
-padding: 12px;
+  padding: 12px;
   flex: 1 1 0;
 }
 
@@ -90,23 +90,28 @@ i {
   font-size: 100px;
 }
 
-.scorecard {
+.scoreboard {
   display: flex;
-  background-color: black;
-  width: 30%;
-  height: auto;
-  border-radius: 10%;
-  padding: 8px;
+  flex-direction: column;
   align-items: center;
-  gap: 8px
-
 }
 
 span {
-
-
   color: white;
+}
 
-
-
+.resetButton {
+  display: block;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  width: 80%;
+  height: 30%;
+  border-radius: 20%;
+  border: white;
+  border-style: solid;
+  border-width: 0.2rem;
+  padding: 12px;
+  align-self: center;
+  justify-content: center;
 }
