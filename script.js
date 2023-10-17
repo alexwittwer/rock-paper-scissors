@@ -23,7 +23,11 @@ const usrScore = document.querySelector("#userScore");
 const cmpScore = document.querySelector("#computerScore");
 let userScore = 0;
 let compScore = 0;
+const gameResult = document.querySelector(".gameResult");
+gameResult.textContent = "choose your weapon - first to 5 wins"
   
+while (userScore <5 && compScore < 5){
+
 
 btn.forEach((item) => {
   item.addEventListener("click", () => {
@@ -34,11 +38,11 @@ btn.forEach((item) => {
   });
 });
 
-//initialize gameResult pointer
-const gameResult = document.querySelector(".gameResult");
-//clear gameResult text
-//current bug: cannot leave an empty string due to padding
-gameResult.textContent = "choose your weapon — first to 5 wins";
+
+
+
+
+
 
 //main game logic
 function playRound(playerChoice) {
