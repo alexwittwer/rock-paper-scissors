@@ -13,7 +13,7 @@ let compScore = 0;
 btn.forEach((item) => {
   item.addEventListener("click", () => {
     playRound(item.value);
-    winCon();
+    getWinCon();
     usrScore.textContent = "Player Score: " + userScore;
     cmpScore.textContent = "Computer Score: " + compScore;
   });
@@ -26,7 +26,7 @@ gameResult.textContent = "choose your weapon";
 //main game logic
 function playRound(playerChoice) {
   let computerChoice = getComputerChoice();
-  let gameWon = winCon();
+  let gameWon = getWinCon();
 
   //this function is needed to make sure the player cannot
   //continue to play after they have already won
@@ -60,7 +60,7 @@ function playRound(playerChoice) {
 }
 
 //checks win conditions for gameover
-function winCon() {
+function getWinCon() {
   if (userScore == 5) {
     gameResult.textContent = "Victory!";
     createResetButton();
