@@ -50,8 +50,8 @@ button:active {
 
 #mainWindow {
   background-color: #cfa44e;
-  width: 90%;
-  height: 90%;
+  width: 50%;
+  height: 40%;
   padding: 24px;
   border: white;
   border-style: solid;
