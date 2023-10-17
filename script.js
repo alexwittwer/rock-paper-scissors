@@ -35,7 +35,7 @@ btn.forEach((item) => {
 });
 }
 
-if (userScore < 5 && compScore < 5) {
+if (userScore < 5 || compScore < 5) {
   playGame();
 } else if userScore === 5 {
   gameResult.textContent = "Victory!";
