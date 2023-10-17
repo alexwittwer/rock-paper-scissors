@@ -28,8 +28,6 @@ const gameResult = document.querySelector(".gameResult");
 gameResult.textContent = "choose your weapon - first to 5 wins"
   
 
-
-
 btn.forEach((item) => {
   item.addEventListener("click", () => {
     playRound(item.value);
@@ -38,11 +36,6 @@ btn.forEach((item) => {
 
   });
 });
-
-
-
-
-
 
 
 //main game logic
@@ -71,30 +64,6 @@ function playRound(playerChoice) {
     return "computer";
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
