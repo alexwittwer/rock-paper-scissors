@@ -1,9 +1,5 @@
 //get computer choice via math.random
 function getComputerChoice() {
-  //Math.random outputs a random number between 0 and 1. Multiplying
-  //by 3 gives us a value between 0 and 2.9999...
-  //Math.floor gives us an integer between 0 and 2, so we add 1 for
-  //readability.
   const computerChoice = Math.floor(Math.random() * 3) + 1;
   let outChoice = "";
 
@@ -19,8 +15,9 @@ function getComputerChoice() {
 }
 
 //game logic -- button
-//event listeners for buttons
 
+//event listeners for buttons. adds all playButtons to btn nodelist
+//then iterates an event listener using each button's stored value
 const btn = document.querySelectorAll(".playButton");
 btn.forEach((item) => {
   item.addEventListener("click", () => {
@@ -31,7 +28,8 @@ btn.forEach((item) => {
 //initialize gameResult pointer
 const gameResult = document.querySelector(".gameResult");
 //clear gameResult text
-gameResult.textContent = "";
+//current bug: cannot leave an empty string due to padding
+gameResult.textContent = "choose your weapon";
 
 //main game logic
 function playRound(playerChoice) {
@@ -50,7 +48,7 @@ function playRound(playerChoice) {
   ) {
     gameResult.textContent = "Computer chose " + computerChoice + ". You win!";
 
-    // else, lose
+    //lose conditions
     return "user";
   } else {
     gameResult.textContent =
