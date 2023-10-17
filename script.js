@@ -27,7 +27,7 @@ const gameResult = document.querySelector(".gameResult");
 //sets initial game result message
 gameResult.textContent = "choose your weapon - first to 5 wins"
   
-while (userScore <5 && compScore < 5){
+
 
 
 btn.forEach((item) => {
@@ -38,7 +38,7 @@ btn.forEach((item) => {
 
   });
 });
-}
+
 
 
 
