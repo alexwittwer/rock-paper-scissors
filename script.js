@@ -14,7 +14,7 @@ function getComputerChoice() {
   return outChoice;
 }
 
-//game start
+//game logic -- button
 
 //event listeners for buttons. adds all playButtons to btn nodelist
 //then iterates an event listener using each button's stored value
@@ -23,11 +23,8 @@ const usrScore = document.querySelector("#userScore");
 const cmpScore = document.querySelector("#computerScore");
 let userScore = 0;
 let compScore = 0;
-const gameResult = document.querySelector(".gameResult");
-//sets initial game result message
-gameResult.textContent = "choose your weapon - first to 5 wins"
   
-
+function playGame () {
 btn.forEach((item) => {
   item.addEventListener("click", () => {
     playRound(item.value);
@@ -36,14 +33,23 @@ btn.forEach((item) => {
 
   });
 });
-
-if (userScore >= 5 || compScore >= 5) {
-  gameResult.textContent = "Game Over!"
-  btn.forEach((item) => {
-    item.removeEventListener("click")
-
-  })
 }
+
+if (userScore < 5 && compScore < 5) {
+  playGame();
+} else if userScore === 5 {
+  gameResult.textContent = "Victory!";
+
+}else if compScore === 5 {
+  gameResult.textContent = "Defeat...";
+}
+
+
+//initialize gameResult pointer
+const gameResult = document.querySelector(".gameResult");
+//clear gameResult text
+//current bug: cannot leave an empty string due to padding
+gameResult.textContent = "choose your weapon";
 
 //main game logic
 function playRound(playerChoice) {
@@ -73,4 +79,32 @@ function playRound(playerChoice) {
 }
 
 
+/* 
+//full game
+function playRPS() {
+    //initialize values for win condition
+    let userWinStreak = 0;
+    let computerWinStreak = 0;
 
+    //if user or computer has less than 5 wins, continue
+    while (userWinStreak < 5 && computerWinStreak < 5) {
+
+        //  play a round, save winner as output
+        const winner = playRound();
+
+        // handle win streak updates
+        if (winner === 'computer') {
+            computerWinStreak++;
+        } else if (winner === 'user') {
+            userWinStreak++;
+        }
+        // end the game, declare the winner
+        if (userWinStreak == 5) {
+            alert("You win!");
+            return;
+        } else if (computerWinStreak == 5) {
+            alert("You lost!");
+            return;
+        }
+    }
+} */
