@@ -35,6 +35,9 @@ btn.forEach((item) => {
 });
 }
 
+playGame();
+
+/*
 if (userScore < 5 || compScore < 5) {
   playGame();
 } else if userScore === 5 {
@@ -43,7 +46,7 @@ if (userScore < 5 || compScore < 5) {
 }else if compScore === 5 {
   gameResult.textContent = "Defeat...";
 }
-
+*/
 
 //initialize gameResult pointer
 const gameResult = document.querySelector(".gameResult");
