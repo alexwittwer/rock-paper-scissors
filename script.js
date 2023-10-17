@@ -1,22 +1,13 @@
-//event listeners for buttons. adds all playButtons to btn nodelist
-//then iterates an event listener using each button's stored value
 const btn = document.querySelectorAll(".playButton");
 const usrScore = document.querySelector("#userScore");
 const cmpScore = document.querySelector("#computerScore");
 
-//creates a reset button that will be added and removed after win conditions
-
-/* function createResetButton() {
-  const resetButton = document.createElement("button");
-  const scoreboard = document.querySelector(".scoreboard");
-  resetButton.classList.add("resetButton");
-  scoreboard.insertBefore(resetButton, usrScore);
-  resetButton.textContent = "Play again?";
-}
- */
+//initialize values for userScore and compScore. Will update
+//these values after each round
 let userScore = 0;
 let compScore = 0;
 
+//plays a round using buttons
 btn.forEach((item) => {
   item.addEventListener("click", () => {
     playRound(item.value);
@@ -26,10 +17,8 @@ btn.forEach((item) => {
   });
 });
 
-//initialize gameResult pointer
+//initialize gameResult pointer, used for displaying outcomes
 const gameResult = document.querySelector(".gameResult");
-//clear gameResult text
-//current bug: cannot leave an empty string due to padding
 gameResult.textContent = "choose your weapon";
 
 //main game logic
@@ -37,9 +26,12 @@ function playRound(playerChoice) {
   let computerChoice = getComputerChoice();
   let gameWon = winCon();
 
+  //this function is needed to make sure the player cannot
+  //continue to play after they have already won
   if (gameWon == true) {
     return;
   } else {
+    //main game logic starts here//
     if (playerChoice === computerChoice) {
       gameResult.textContent =
         "It's a tie! Computer chose " + computerChoice + ". ";
@@ -65,7 +57,7 @@ function playRound(playerChoice) {
   }
 }
 
-//checks win conditions
+//checks win conditions for gameover
 function winCon() {
   if (userScore == 5) {
     gameResult.textContent = "Victory!";
