@@ -27,7 +27,7 @@ const gameResult = document.querySelector(".gameResult");
 //sets initial game result message
 gameResult.textContent = "choose your weapon - first to 5 wins"
   
-while ((userScore < 5) && (compScore < 5)) {
+
 btn.forEach((item) => {
   item.addEventListener("click", () => {
     playRound(item.value);
@@ -36,6 +36,13 @@ btn.forEach((item) => {
 
   });
 });
+
+if (userScore >= 5 || compScore >= 5) {
+  gameResult.textContent = "Game Over!"
+  btn.forEach((item) => {
+    item.removeEventListener("click")
+
+  })
 }
 
 //main game logic
