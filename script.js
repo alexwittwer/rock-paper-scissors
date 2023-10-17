@@ -38,7 +38,7 @@ btn.forEach((item) => {
 const gameResult = document.querySelector(".gameResult");
 //clear gameResult text
 //current bug: cannot leave an empty string due to padding
-gameResult.textContent = "choose your weapon";
+gameResult.textContent = "choose your weapon — first to 5 wins";
 
 //main game logic
 function playRound(playerChoice) {
@@ -67,32 +67,29 @@ function playRound(playerChoice) {
   }
 }
 
-/* 
-//full game
-function playRPS() {
-    //initialize values for win condition
-    let userWinStreak = 0;
-    let computerWinStreak = 0;
 
-    //if user or computer has less than 5 wins, continue
-    while (userWinStreak < 5 && computerWinStreak < 5) {
 
-        //  play a round, save winner as output
-        const winner = playRound();
 
-        // handle win streak updates
-        if (winner === 'computer') {
-            computerWinStreak++;
-        } else if (winner === 'user') {
-            userWinStreak++;
-        }
-        // end the game, declare the winner
-        if (userWinStreak == 5) {
-            alert("You win!");
-            return;
-        } else if (computerWinStreak == 5) {
-            alert("You lost!");
-            return;
-        }
-    }
-} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
